@@ -7,11 +7,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
 
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
-	<link rel="stylesheet" type="text/css" href="css/owl.transitions.css"/>
-	<link rel="stylesheet" type="text/css" href="css/owl.carousel.css"/>
-	<link rel="stylesheet" type="text/css" href="css/animate.css"/>
-	<link rel="stylesheet" type="text/css" href="css/main.css"/>
+
 
 </head>
 <body>
@@ -284,6 +280,27 @@
 		<p class="copyright animated wow fadeIn" data-wow-duration="2s"> <strong>Pixelhint</strong>
 	</footer>
 	<!--  End Footer Section  -->
+	<script type="text/javascript">
+		const loadStyleSheet = src => {
+			if(document.createStyleSheet){
+				document.createStyleSheet(src)}
+			else{
+				const styleSheet = document.createElement('link');
+				styleSheet.href = src;
+				styleSheet.type = 'text/css';
+				styleSheet.rel = 'stylesheet';
+				document.getElementsByTagName('head')[0].appendChild(styleSheet);
+			}
+		}
+
+		let styleSheets = ["css/bootstrap.css", "css/owl.transitions.css", "css/owl.carousel.css", "css/animate.css", "css/main.css"]
+
+		window.onload = function(){
+			for (i in styleSheets) {
+				loadStyleSheet(styleSheets[i]);
+			}
+		}
+	</script>
 
 
 	<script defer type="text/javascript" src="js/jquery.js"></script>
